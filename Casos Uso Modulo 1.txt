@@ -11,33 +11,102 @@ CP:
 8. O sistema verifica que os dados estao correctos, adiciona a actividade ha 
 "listaActividades" do evento e volta ha janela "CriarEvento"
 9. O utilizador seleciona a opcao "Ok"
-10. O sistema verifica que os dados estao nos formatos corretos, 
+10. O sistema verifica que os dados inseridos estao nos formatos corretos, 
 cria um evento e adiciona os dados inseridos ao evento e volta ao passo 2
 
 Caminhos alternativos
 8.1 A data de inicio introduzida nao e valida
-8.1.1 O sistema apresenta a mensagem de erro #1 e coloca o focus no campo "Hora Inicio"
+8.1.1 O sistema apresenta a mensagem de erro #1, coloca o focus no campo "Hora Inicio" e volta a 8
 
 8.2 A data de fim introduzida nao e valida
-8.2.1 O sistema apresenta a mensagem de erro #1 e coloca o focus no campo "Hora Fim"
+8.2.1 O sistema apresenta a mensagem de erro #1, coloca o focus no campo "Hora Fim" e volta a 8
 
 8.3 O local introduzido nao e valido
-8.3.1 O sistema apresenta a mensagem de erro #4 e coloca o focus no campo "Hora Fim"
+8.3.1 O sistema apresenta a mensagem de erro #4, coloca o focus no campo "Hora Fim" e volta a 8
 
 8.4 O utilizador seleciona a opcao "Cancelar"
 8.4.1 O sistema volta ha janela "CriarEvento"
 
 10.1 O nome introduzido nao e valido
-10.1.1 O sistema apresenta a mensagem de erro #2 e coloca o focus no campo "Nome"
+10.1.1 O sistema apresenta a mensagem de erro #2, coloca o focus no campo "Nome" e volta a 10
 
 10.2 A data introduzida nao e valida
-10.2.1 O sistema apresenta a mensagem de erro #3 e coloca o focus no campo "Data"
+10.2.1 O sistema apresenta a mensagem de erro #3, coloca o focus no campo "Data" e volta a 10
 
 10.3 O local introduzido nao e valido
-10.3.1 O sistema apresenta a mensagem de erro #4 e coloca o focus no campo "Local"
+10.3.1 O sistema apresenta a mensagem de erro #4, coloca o focus no campo "Local" e volta a 10
 
 10.4 O utilizador seleciona a opcao "Cancelar"
 10.4.1 O sistema volta ha card "GestaoEventos"
+
+Editar Evento
+
+CP:
+1. O utilizador seleciona a aba Gestao de Eventos na janela "ICKKF"
+2. O sistema mostra a card "GestaoEventos"
+3. O utilizador seleciona um evento da "listaEventos" e seleciona a opcao "Editar Evento"
+4. O sistema vai "buscar" os dados do evento selecionado e preenche os respectivos campos
+5. O sistema abre a janela "EditarEvento"
+6. O utilizador edita os dados e seleciona o botao "Ok"
+7. O sistema verifica que os dados inseridos estao nos formatos corretos, 
+modifica os dados do evento e volta ao passo 2
+
+Caminhos alternativos
+4.1 Nenhum evento selecionado
+4.1.1 O sistema apresenta a mensagem de erro #5 e volta a 3
+
+7.1 A data de inicio introduzida nao e valida
+7.1.1 O sistema apresenta a mensagem de erro #1, coloca o focus no campo "Hora Inicio" e volta a 8
+
+7.2 A data de fim introduzida nao e valida
+7.2.1 O sistema apresenta a mensagem de erro #1, coloca o focus no campo "Hora Fim" e volta a 8
+
+7.3 O local introduzido nao e valido
+7.3.1 O sistema apresenta a mensagem de erro #4, coloca o focus no campo "Hora Fim" e volta a 8
+
+7.4 O utilizador seleciona a opcao "Cancelar"
+7.4.1 O sistema volta ha janela "CriarEvento"
+
+7.5 O nome introduzido nao e valido
+7.5.1 O sistema apresenta a mensagem de erro #2, coloca o focus no campo "Nome" e volta a 10
+
+7.6 A data introduzida nao e valida
+7.6.1 O sistema apresenta a mensagem de erro #3, coloca o focus no campo "Data" e volta a 10
+
+7.7 O local introduzido nao e valido
+7.7.1 O sistema apresenta a mensagem de erro #4, coloca o focus no campo "Local" e volta a 10
+
+7.8 O utilizador seleciona a opcao "Cancelar"
+7.8.1 O sistema volta ha card "GestaoEventos"
+
+Apresentar programa do evento
+
+CP:
+1. O utilizador seleciona a aba Gestao de Eventos na janela "ICKKF"
+2. O sistema mostra a card "GestaoEventos"
+3. O utilizador seleciona um evento da "listaEventos" e seleciona a opcao "Apresentar programa do evento"
+4. O sistema vai "buscar" o programa do evento selecionado e preenche a lista com o programa do evento selecionado
+5. O sistema apresenta a janela "Apresentar programa do evento"
+6. O utilizador seleciona o botao "Ok"
+6. O sistema volta a 2
+
+Caminhos alternativos
+4.1 Nenhum evento selecionado
+4.1.1 O sistema apresenta a mensagem de erro #5 e volta a 3
+
+Eliminar Evento
+
+CP:
+1. O utilizador seleciona a aba Gestao de Eventos na janela "ICKKF"
+2. O sistema mostra a card "GestaoEventos"
+3. O utilizador seleciona um evento da "listaEventos" e seleciona a opcao "Eliminar Evento"
+4. O sistema apresenta uma mensagem de confirmacao
+5. O utilizador seleciona a opcao "Sim"
+6. O sistema apaga o evento
+
+Caminhos alternativos
+4.1 Nenhum evento selecionado
+4.1.1 O sistema apresenta a mensagem de erro #5 e volta a 3
 
 
 Mensagens Erro:
@@ -45,3 +114,4 @@ Mensagens Erro:
 #2 Nome Invalido
 #3 Data invalida
 #4 Local Invalido
+#5 Nao existe um evento selecionado
